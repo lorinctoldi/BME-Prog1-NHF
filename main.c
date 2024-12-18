@@ -9,7 +9,7 @@ int main(void)
 
     while(input != 3)
     {
-        system("clear");
+        system("clear || cls");
         printf("[1] Uj jatek kezdese\n[2] Jatek betoltse\n[3] Kilepes\nValasztasa: ");
         scanf("%d", &input);
         

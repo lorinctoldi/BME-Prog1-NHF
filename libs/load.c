@@ -28,11 +28,11 @@ ChessMove parseMove(char *move)
 // load game from file
 GameStruct load(void)
 {
-    system("clear");
+    system("clear || cls");
     printf("A fajl a data nevu mappabol valasztodik ki. \nA jatszma betoltesehez adja meg a file nevet es kiterjeszteset (pl. proba.txt): ");
 
     // read in the file name
-    char filename[256];
+    char filename[250];
     scanf("%s", filename);
 
     // initialize new match
@@ -60,14 +60,8 @@ GameStruct load(void)
     char line[4096];
     while (fgets(line, sizeof(line), file))
     {
-        // check for white player's elo
-        if (strstr(line, "[WhiteElo") != NULL)
-            sscanf(line, "[WhiteElo \"%d\"]", &match.whiteElo);
-        // check for black player's elo
-        else if (strstr(line, "[BlackElo") != NULL)
-            sscanf(line, "[BlackElo \"%d\"]", &match.blackElo);
         // check for white player's name
-        else if (strstr(line, "[White \"") != NULL)
+        if (strstr(line, "[White \"") != NULL)
             sscanf(line, "[White \"%[^\"]\"]", match.white);
         // check for black player's name
         else if (strstr(line, "[Black \"") != NULL)

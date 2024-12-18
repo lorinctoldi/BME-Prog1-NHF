@@ -4,7 +4,7 @@
 int save(GameStruct match)
 {
   // read filename from user
-  char filename[256];
+  char filename[250];
   printf("File neve: ");
   scanf("%s", filename);
 
@@ -25,9 +25,6 @@ int save(GameStruct match)
   // write the informations of both players to top of file
   fprintf(file, "[White \"%s\"]\n", match.white);
   fprintf(file, "[Black \"%s\"]\n", match.black);
-
-  fprintf(file, "[WhiteElo \"%d\"]\n", match.whiteElo);
-  fprintf(file, "[BlackElo \"%d\"]\n", match.blackElo);
 
   // write the moves to the file in the required format (if there are moves)
   for (int i = 0; i < match.numMoves; i++)

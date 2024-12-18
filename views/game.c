@@ -39,7 +39,7 @@ int game(int isLoad)
 
   while(input != -1)
   {
-    system("clear");
+    system("clear || cls");
     // dispay the board
     displayBoard(board);
 
@@ -53,7 +53,7 @@ int game(int isLoad)
     if (scanf("%d", &input) != 1)
     {
       // if the input is not a number clear input buffer and start the loop again
-      fflush(stdin);
+      clearBuffer();
       input = 0;
       continue;
     }
@@ -182,7 +182,8 @@ int game(int isLoad)
     }
   }
 
-  system("clear");
+  system("clear || cls");
+
   // display the board then free it
   displayBoard(board);
   freeBoard(&board);

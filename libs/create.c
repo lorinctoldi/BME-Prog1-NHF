@@ -3,9 +3,9 @@
 // create a new game from scratch
 GameStruct create(void)
 {
-    system("clear");
+    system("cls||clear");
     // clear the buffer
-    fflush(stdin);
+    clearBuffer();
 
     // define new game
     GameStruct match = {0};
@@ -14,14 +14,9 @@ GameStruct create(void)
     printf("Feher jatekos neve: ");
     scanf("%[^\n]", match.white);
 
-    printf("Feher jatekos Elo pontszama: ");
-    scanf("%d%*c", &match.whiteElo);
-
+    clearBuffer();
     printf("Fekete jatekos neve: ");
     scanf("%[^\n]", match.black);
-
-    printf("Fekete jatekos Elo pontszama: ");
-    scanf("%d%*c", &match.blackElo);
 
     // from the start both sides CAN castle
     match.whiteCastle = true;
